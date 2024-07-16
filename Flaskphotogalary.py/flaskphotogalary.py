@@ -52,8 +52,6 @@ def pets3():
 
 
 
-
-
 #outer space routes
 @app.route('/outer_space')
 def outer_space():
