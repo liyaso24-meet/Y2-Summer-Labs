@@ -32,3 +32,7 @@ print("The hotest temp was: ", max_temp, "on", max_temp_day)
 print("The coldest temp was: ", min_temp, "on", min_temp_day)
 print("Average temp for the week is: ", avg_temp)
 print("Days that were above the average temps: ", above_avg)
+
+#bonus task
+sorted_temp = sorted(temp) 
+print(sorted_temp)
