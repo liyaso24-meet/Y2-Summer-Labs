@@ -84,7 +84,7 @@ if __name__ == '__main__':
 
 #imports and calling app
 from flask import Flask, render_template, request, redirect, url_for
-from flask import session as login_sessiion
+from flask import session as login_session
 import random
 
 app = Flask(__name__)
@@ -99,16 +99,13 @@ def login():
 		if 'username' in request.form and 'password' in request.form:
 			username = request.form['username']
 			password = request.form['password']
-			return render_template('home.html', username=username, password=password, length=len(password))
-		#doesn't seem to work (next 2 lines)
-		else:
-			return "Missing username or birth month"
 			login_session['username'] = username
 			login_session['password'] = password
+			return render_template('home.html', username=username, password=password, length=len(password))
 
 #route to loged in users
-@app.route('/fortune/<string:password>/<int:length>')
-def fortune(password, length):
+@app.route('/fortune')
+def fortune():
 	fortune = ["Good things come to those who wait.",
 	"Patience is a virtue.","The early bird gets the worm.",
     "A wise man once said, everything in its own time and place.",
@@ -121,16 +118,12 @@ def fortune(password, length):
 	"You should be able to undertake and complete anything.",
 	"NOVEMBER IS THE BEST MONTH OF THE YEAR",
 	"You will have good new today!"]
-	#I do not think it works (the next 2 lines of code)
-	if len(password) > 12:
+	if len('fortune') > 12:
 		return redirect(url_for('login'))
-	birthlength = password[length]
+	birthlength = fortune[len(login_session['password'])]
 	return render_template("newfortune.html", randomfortune= birthlength)
 
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-#Can't find why it doesnt lead me to the fortune route after clicking on the button, it worked but then stopped.
-#(I've bee working on it for most parts of the weekend) 
+ 
