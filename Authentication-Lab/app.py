@@ -32,12 +32,11 @@ def login():
     else: 
         email = request.form['email']
         password = request.form['password']
-        print(login_session['user'])
-        print(auth.current_user)
         try:
             login_session['user'] = auth.sign_in_with_email_and_password(email, password)
             login_session['quotes'] = []
-
+            print(login_session['user'])
+            print(auth.current_user)
             return redirect(url_for('home'))
 
         except:
@@ -66,16 +65,11 @@ def home():
     if request.method == "GET":
         return render_template("home.html")
     else:
-        login_session['quotes'] 
-        return redirect(url_for('login'))
-
-#@app.route('/signout')
-#def signout():
- #   login_session['user'] = None
-  #  auth.current_user = None
-   # return redirect(url_for('login'))
-
-
+        quote = request.form['quote']
+        login_session['quotes'].append(quote)
+        login_session.modified = True
+        print(login_session['quotes'])
+        return redirect(url_for('thanks'))
 
 
 #app route thanks
@@ -84,12 +78,18 @@ def thanks():
     return render_template("thanks.html")
 
 
+@app.route('/signout')
+def signout():
+    login_session['user'] = None
+    auth.current_user = None
+    return redirect(url_for('login'))
+
+
 #app route display
 @app.route('/display', methods=['GET','POST'])
 def display():
-    if request.method == 'GET':
-        quotes = request.form['quote']
-        return render_template("display.html", q= quotes)
+    getquote = login_session['quotes']
+    return render_template("display.html", getquote= getquote)
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -6,25 +6,39 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-
+<style>
+  .container {
+    text-align: center;
+  }
+  .input-container {
+    text-align: center;
+  }
+</style>
 </head>
-  <body>
+  <body style="background-color:palevioletred;">
     <form action="/signup" method="POST" style="max-width:500px;margin:auto">
-      <h1 style="color: black;">Signup to Facebook</h1 >
+      <h1 style="color: white; text-align: center;">Signup to Facebook</h1 >
       <div class="input-container">
         <i class="fa fa-user icon"></i>
         <input class="input-field" type="text" placeholder="Email" name="email">
       </div>
 
-      
       <div class="input-container">
         <i class="fa fa-key icon"></i>
         <input class="input-field" type="password" placeholder="Password" name="password">
       </div>
-      <button type="submit" class="btn">Signup</button>
+      <div class="container">
+        <div class="vertical-center">
+          <button type="submit" class="btn">Signup</button>
+        </div>
+      </div>
     </form>
-    <a href="/" style="color:black;">Already have an account? Log in!</a>
-    <p style="color: black;">{{error}}</p>
+    <div class="container">
+      <div class="vertical-center">
+        <a href="/" style="color:white;">Already have an account? Log in!</a>
+      </div>
+    </div>
+    <p style="color: white;">{{error}}</p>
 
 </body>
 </html>

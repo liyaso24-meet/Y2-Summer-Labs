@@ -6,10 +6,20 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+<style>
+  .container {
+    text-align: center;
+  }
+</style>
 
 </head>
-  <body>
-    <h2>Thank you for submiting a quote!</h2>
-    <a href="/home" style="color: black;">Add a new quote</a><br>
-    <a href="/display" style="color: black;">See quotes</a>
+<body style="background-color:palevioletred;">
+  <h2 style="color:black; text-align: center;">Thank you for submiting a quote!</h2>
+  <div class="container">
+    <div class="vertical-center">
+      <button><a href="/home" style="color: black;">Add a new quote</a></button>
+      <button><a href="/display" style="color: black;">See quotes</a></button>
+    </div>
+  </div>
+
 </body>
