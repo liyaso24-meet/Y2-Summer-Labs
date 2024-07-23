@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MeetCrave - Gallery</title>	
+	<style>
+		.container{ text-align:center; margin:auto; }
+		.input-container{ text-align:center; margin:auto;}
+
+	</style>
+</head>
+<body>
+    <h2> Crave gallary </h2>
+    <ul> {% for crave in crave.values()%}
+        <li> {{crave['crave']}} </li>
+        <li> {{crave['whocraves']}} </li>
+
+    {%endfor%}}
+    </ul>
+    <h2>Have more cravings you want to save for the weekend?</h2>
+    <button style="text-align: center;"><a href= "/crave">Click here</button>	
+</body>
+</html>
