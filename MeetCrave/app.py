@@ -80,7 +80,7 @@ def crave():
     else: 
         UID = login_session['user']['localId']
         crave = {"crave":request.form['crave'], "whocraves": request.form['whocraves'], "comments": {}}
-        db.child('crave').push(crave)
+        db.child('crave').child(UID).set(crave)
         return redirect(url_for('gallary'))
 
 #app route gallary
@@ -92,7 +92,6 @@ def gallary():
 
     #else:
        # UID = login_session['user']['localId']
-        #crave = {"crave":request.form['crave'], "whocraves": request.form['whocraves'], "comments": {}}
         #db.child('crave').push(crave)
         #return render_template("gallary.html")
 
