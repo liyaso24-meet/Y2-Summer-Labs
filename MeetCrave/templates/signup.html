@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MeetCrave - SignUp</title>
+	<style>
+		.container{ text-align:center; margin:auto; }
+		.input-container{ text-align:center; margin:auto;}
+
+	</style>
+</head>
+<body>
+	<h1 style="color: black; margin: auto; text-align: center;">Signup</h1>
+
+	<form action="/signup" method="POST" style="max-width:500px;margin:auto">
+		<div class="input-container">
+        <i class="fa fa-user icon"></i>
+        <input class="input-field" type="text" placeholder="Email" name="email">
+    </div>
+
+    <div class="input-container">
+    	<i class="fa fa-key icon"></i>
+    	<input class="input-field" type="password" placeholder="Password" name="password">
+    </div>
+
+    <div class="input-container">
+    	<i class="fa fa-key icon"></i>
+    	<input class="input-field" type="username" placeholder="Full name" name="username">
+    </div>
+
+    <div class="container">
+    	<div class="vertical-center">
+    		<button type="submit" class="btn">Sign up</button>
+    	</div>
+    </div>
+    <div class="container">
+		<div class="vertical-center">
+			<a style="color: black;" href="/login" style="color:white; max-width:500px; margin:auto;">Already have an account? Login!</a>
+		</div>
+	</div>
+</form>
+
+<p style="color: white;">{{error}}</p>
+
+</body>
+</html>
