@@ -92,6 +92,7 @@ def gallary():
 
     #else:
        # UID = login_session['user']['localId']
+        #crave = {"crave":request.form['crave'], "whocraves": request.form['whocraves'], "comments": {}}
         #db.child('crave').push(crave)
         #return render_template("gallary.html")
 
