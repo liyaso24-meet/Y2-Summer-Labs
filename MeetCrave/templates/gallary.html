@@ -14,8 +14,8 @@
     <h2>Here you can see the Crave of all your fellow Meet students!</h2>
     {% for crave in crave.values()%}
     <ul class="input-container">
-        <li> {{crave['crave']}} </li>
-        <li> {{crave['whocraves']}} </li>
+        <li>Craving: {{crave['crave']}} </li>
+        <li>Who craves?{{crave['whocraves']}} </li>
     </ul>
     {%endfor%}
 
