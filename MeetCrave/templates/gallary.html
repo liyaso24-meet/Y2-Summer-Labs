@@ -11,7 +11,7 @@
 </head>
 <body>
     <h1 id="headersecond"> Crave gallary </h1>
-    <p>Here you can see the entire craves of the Cohort!</p>
+    <h2>Here you can see the Crave of all your fellow Meet students!</h2>
     <ul class="input-container"> {% for crave in crave.values()%}
         <li> {{crave['crave']}} </li>
         <li> {{crave['whocraves']}} </li>
@@ -19,7 +19,14 @@
     {%endfor%}
     </ul>
     <h2>Your craving changed?? <br> Want to update your craving?</h2>
-    <button class="container" style="text-align: center;"><a href= "/crave">Click to change</button>	
+<form action="/crave" method="get" style="max-width:500px;margin:auto; text-align: center;">
+	<div class="container">
+		<div class="center">
+			<button type="submit" class="btn">Click to change</button>
+		</div>
+	</div>
+</form>
+    <h2>Satisfied with your Crave? <br> We will keep it for you!</h2>
 <form action="/signout" method="get" style="max-width:500px;margin:auto; text-align: center;">
 	<div class="container">
 		<div class="center">
