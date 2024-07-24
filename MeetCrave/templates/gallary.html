@@ -12,12 +12,13 @@
 <body>
     <h1 color="steelblue" id="headersecond"> Crave gallary </h1>
     <h2>Here you can see the Crave of all your fellow Meet students!</h2>
-    <ul class="input-container"> {% for crave in crave.values()%}
+    {% for crave in crave.values()%}
+    <ul class="input-container">
         <li> {{crave['crave']}} </li>
         <li> {{crave['whocraves']}} </li>
-
-    {%endfor%}
     </ul>
+    {%endfor%}
+
     <h2>Your craving changed?? Want to update your craving?</h2>
 <form action="/crave" method="get" style="max-width:500px;margin:auto; text-align: center;">
 	<div class="container">
