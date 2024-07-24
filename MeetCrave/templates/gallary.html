@@ -7,17 +7,19 @@
 		.input-container{ text-align:center; margin:auto;}
 
 	</style>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h2> Crave gallary </h2>
-    <ul> {% for crave in crave.values()%}
+    <h1 id="headersecond"> Crave gallary </h1>
+    <p>Here you can see the entire craves of the Cohort!</p>
+    <ul class="input-container"> {% for crave in crave.values()%}
         <li> {{crave['crave']}} </li>
         <li> {{crave['whocraves']}} </li>
 
-    {%endfor%}}
+    {%endfor%}
     </ul>
-    <h2>Have more cravings you want to save for the weekend?</h2>
-    <button style="text-align: center;"><a href= "/crave">Click here</button>	
+    <h2>Your craving changed?? <br> Want to update your craving?</h2>
+    <button class="container" style="text-align: center;"><a href= "/crave">Click to change</button>	
 <form action="/signout" method="get" style="max-width:500px;margin:auto; text-align: center;">
 	<div class="container">
 		<div class="center">

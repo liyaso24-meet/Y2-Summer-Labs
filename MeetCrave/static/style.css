@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  font-family: Arial, sans-serif;
+  font-size: 2em;
+  color: #333;
+  text-align: center;
+  margin-top: 20;
+}
+
+
+#headersecond {
+  font-family: Arial, sans-serif;
+  font-size: 4em;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}
+
+p {
+  font-family: Arial, sans-serif;
+  font-size: 1.5em;
+  color: #333;
+  margin: auto;
+  line-height: 1.5;
+}
+
+.error-message {
+  font-family: Arial, sans-serif;
+  color: red;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid red;
+}
+
+#main-content {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.container {
+  margin: 20px; 
+}
+
+.input-container {
+  margin: 20px; 
+}
+.btn {
+  width: 150px; 
+  height: 30px;  
+}
+
+
+}

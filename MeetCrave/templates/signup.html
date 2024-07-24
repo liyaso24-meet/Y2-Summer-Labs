@@ -6,9 +6,11 @@
 		.container{ text-align:center; margin:auto; }
 		.input-container{ text-align:center; margin:auto;}
 	</style>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 <body>
-	<h1 style="color: black; margin: auto; text-align: center;">Signup</h1>
+	<h1 id="headersecond" style="color: black; margin: auto; text-align: center;">Signup</h1>
 
 	<form action="/signup" method="POST" style="max-width:500px;margin:auto">
 		<div class="input-container">
