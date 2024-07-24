@@ -1,39 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>MeetCrave - Gallery</title>	
-	<style>
-		.container{ text-align:center; margin:auto; }
-		.input-container{ text-align:center; margin:auto;}
-
-	</style>
-	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeetCrave - Gallery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .input-container {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .input-container li {
+            list-style-type: none;
+            margin-bottom: 5px;
+        }
+        .btn {
+            background-color: steelblue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #4CAF50;
+        }
+        h1, h2 {
+            color: steelblue;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1 color="steelblue" id="headersecond"> Crave gallary </h1>
-    <h2>Here you can see the Crave of all your fellow Meet students!</h2>
-    {% for crave in crave.values()%}
-    <ul class="input-container">
-        <li>Craving: {{crave['crave']}} </li>
-        <li>Who craves?{{crave['whocraves']}} </li>
-    </ul>
-    {%endfor%}
+    <div class="container">
+        <h1>Crave Gallery</h1>
+        <h2>Here you can see the Craves of all your fellow Meet students!</h2>
+        {% for crave in crave.values() %}
+        <div class="crave-item">
+        	<ul class="input-container">
+        		<li><strong>Craving:</strong> {{ crave['crave'] }} </li>
+        		<li><strong>Who craves?</strong> {{ crave['whocraves'] }} </li>
+        	</ul>
+        </div>
+        {% endfor %}
 
-    <h2>Your craving changed?? Want to update your craving?</h2>
-<form action="/crave" method="get" style="max-width:500px;margin:auto; text-align: center;">
-	<div class="container">
-		<div class="center">
-			<button type="submit" class="btn">Click to change</button>
-		</div>
-	</div>
-</form>
-    <h2>Satisfied with your Crave? We will keep it for you!</h2>
-<form action="/signout" method="get" style="max-width:500px;margin:auto; text-align: center;">
-	<div class="container">
-		<div class="center">
-			<button type="submit" class="btn">Sign out</button>
-		</div>
-	</div>
-</form>
+
+        <h2>Your craving changed? Want to update your craving?</h2>
+        <form action="/crave" method="get">
+            <div class="center">
+                <button type="submit" class="btn">Click to change</button>
+            </div>
+        </form>
+
+        <h2>Satisfied with your Crave? We will keep it for you!</h2>
+        <form action="/signout" method="get">
+            <div class="center">
+                <button type="submit" class="btn">Sign out</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
+

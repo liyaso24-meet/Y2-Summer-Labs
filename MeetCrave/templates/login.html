@@ -1,46 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>MeetCrave - Login</title>
-	<style>
-		.container{ text-align:center; margin:auto; }
-		.input-container{ text-align:center; margin:auto;}
-
-	</style>
-	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeetCrave - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .box {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+        }
+        .container {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .input-container {
+            margin-bottom: 10px;
+        }
+        .input-field {
+            width: calc(100% - 24px); /* Adjusted for padding */
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+        .btn {
+            background-color: steelblue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #4CAF50;
+        }
+        .vertical-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #headersecond {
+            color: steelblue;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        a {
+            color: steelblue;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-	<h1 id="headersecond" style="color: steelblue; margin: auto; text-align: center;">Login</h1>
-
-	<form action="/login" method="POST" style="max-width:500px;margin:auto">
-		<div class="input-container">
-        <i class="fa fa-user icon"></i>
-        <input class="input-field" type="text" placeholder="Email" name="email">
+    <div class="box">
+        <h1 id="headersecond">Login</h1>
+        
+        <form action="/login" method="POST">
+            <div class="input-container">
+                <i class="fa fa-user icon"></i>
+                <input class="input-field" type="text" placeholder="Email" name="email" required>
+            </div>
+    
+            <div class="input-container">
+                <i class="fa fa-key icon"></i>
+                <input class="input-field" type="password" placeholder="Password" name="password" required>
+            </div>
+    
+            <div class="input-container">
+                <i class="fa fa-user icon"></i>
+                <input class="input-field" type="text" placeholder="Full name" name="username">
+            </div>
+    
+            <div class="vertical-center">
+                <button type="submit" class="btn">Login</button>
+            </div>
+        </form>
+        
+        <div class="vertical-center">
+            <a href="/signup">Don't have a user? Sign up!</a>
+        </div>
+        
+        <p class="error-message">{{ error }}</p>
     </div>
-
-    <div class="input-container">
-    	<i class="fa fa-key icon"></i>
-    	<input class="input-field" type="password" placeholder="Password" name="password">
-    </div>
-
-    <div class="input-container">
-    	<i class="fa fa-key icon"></i>
-    	<input class="input-field" type="username" placeholder="Full name" name="username">
-    </div>
-
-    <div class="container">
-    	<div class="vertical-center">
-    		<button type="submit" class="btn">Login</button>
-    	</div>
-    </div>
-    <div class="container">
-		<div class="vertical-center">
-			<a style="color: steelblue;" href="/signup" max-width:500px; margin:auto;">Don't have a user? Sign up!</a>
-		</div>
-	</div>
-</form>
-
-<p style="color: black;">{{error}}</p>
-
 </body>
 </html>

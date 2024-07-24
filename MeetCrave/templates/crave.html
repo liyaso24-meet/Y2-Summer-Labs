@@ -1,38 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>MeetCrave - What's your Crave?</title>
-	<style>
-		.container{ text-align:center; margin:auto; }
-		.input-container{ text-align:center; margin:auto;}
-
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeetCrave - What's your Crave?</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .box {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+        }
+        .container {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .input-container {
+            margin-bottom: 10px;
+        }
+        .input-field {
+            width: calc(100% - 24px); /* Adjusted for padding */
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+        .btn {
+            background-color: steelblue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #4CAF50;
+        }
+        .vertical-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #headersecond {
+            color: steelblue;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-	<h1 id="headersecond" style="color: steelblue; margin: auto; text-align: center;">What's your Crave?</h1>
-
-	<form action="/crave" method="POST" style="max-width:500px;margin:auto">
-		<div class="input-container">
-        <i class="fa fa-user icon"></i>
-        <input class="input-field" type="crave" placeholder="Enter your Crave?" name="crave">
+    <div class="box">
+        <h1 id="headersecond">What's your Crave?</h1>
+        
+        <form action="/crave" method="POST">
+            <div class="input-container">
+                <i class="fa fa-question icon"></i>
+                <input class="input-field" type="text" placeholder="Enter your Crave?" name="crave" required>
+            </div>
+    
+            <div class="input-container">
+                <i class="fa fa-user icon"></i>
+                <input class="input-field" type="text" placeholder="Who's craving it?" name="whocraves" required>
+            </div>
+    
+            <div class="vertical-center">
+                <button type="submit" class="btn">Send Crave</button>
+            </div>
+        </form>
+        
+        <p class="error-message">{{ error }}</p>
     </div>
-
-    <div class="input-container">
-    	<i class="fa fa-key icon"></i>
-    	<input class="input-field" type="whocraves" placeholder="Who's craving it?" name="whocraves">
-    </div>
-
-    <div class="container">
-    	<div class="vertical-center">
-    		<button type="submit" class="btn">Send crave</button>
-    	</div>
-    </div>
-
-</form>
-
-<p style="color: black;">{{error}}</p>
-
 </body>
 </html>
