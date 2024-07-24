@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
+  background-color: beige;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -10,7 +11,15 @@ body {
 h1 {
   font-family: Arial, sans-serif;
   font-size: 2em;
-  color: #333;
+  color: steelblue;
+  text-align: center;
+  margin-top: 20;
+}
+
+h2 {
+  font-family: Arial, sans-serif;
+  font-size: 2em;
+  color: steelblue;
   text-align: center;
   margin-top: 20;
 }
@@ -19,7 +28,7 @@ h1 {
 #headersecond {
   font-family: Arial, sans-serif;
   font-size: 4em;
-  color: #333;
+  color: steelblue;
   text-align: center;
   margin-top: 20px;
 }
@@ -27,7 +36,7 @@ h1 {
 p {
   font-family: Arial, sans-serif;
   font-size: 1.5em;
-  color: #333;
+  color: steelblue;
   margin: auto;
   line-height: 1.5;
 }
@@ -48,15 +57,19 @@ p {
 }
 
 .container {
-  margin: 20px; 
+  margin: 20px;
+
 }
 
 .input-container {
   margin: 20px; 
+
 }
 .btn {
   width: 150px; 
-  height: 30px;  
+  height: 30px; 
+  color: steelblue;
+
 }
 
 
