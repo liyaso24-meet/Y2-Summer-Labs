@@ -8,12 +8,12 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: steelblue;
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background-color: #f6f6f6; /* Light grey background */
         }
         .box {
             background-color: #ffffff;
@@ -43,9 +43,10 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s ease; /* Smooth transition */
         }
         .btn:hover {
-            background-color: skyblue;
+            background-color: lightblue; /* Light blue on hover */
         }
         .vertical-center {
             display: flex;
@@ -65,7 +66,7 @@
             text-decoration: underline;
         }
         .error-message {
-            color: skyblue;
+            color: #e91e63; /* Pink color */
             text-align: center;
             margin-top: 20px;
         }

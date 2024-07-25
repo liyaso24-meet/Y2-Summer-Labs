@@ -8,13 +8,12 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: steelblue;
             margin: 0;
             padding: 20px;
+            background-color: #f0f0f0; /* Light grey background */
         }
         .container {
-            text-align: center;
-            max-width: 600px;
+            max-width: 800px;
             margin: auto;
             padding: 20px;
             background-color: #ffffff;
@@ -38,9 +37,10 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s ease;
         }
         .btn:hover {
-            background-color: skyblue;
+            background-color: lightblue;
         }
         h2 {
             color: steelblue;
@@ -59,15 +59,15 @@
     <div class="container">
         <h1><strong>Crave Gallery</strong></h1>
         <h2>Here you can see the Craves of all your fellow Meet students!</h2>
+
         {% for crave in crave.values() %}
         <div class="crave-item">
-        	<ul class="input-container">
-        		<strong><li><strong style="color: steelblue;">Craving:</strong> {{ crave['crave'] }} </li></strong>
-        		<strong><li><strong style="color: steelblue;">Who craves?</strong> {{ crave['whocraves'] }} </li></strong>
-        	</ul>
+            <ul class="input-container">
+                <li><strong style="color: steelblue;">Craving:</strong> {{ crave['crave'] }}</li>
+                <li><strong style="color: steelblue;">Who craves?</strong> {{ crave['whocraves'] }}</li>
+            </ul>
         </div>
         {% endfor %}
-
 
         <h2>Your craving changed? Want to update your craving?</h2>
         <form action="/crave" method="get">
