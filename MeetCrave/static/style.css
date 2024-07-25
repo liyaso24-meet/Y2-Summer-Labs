@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  background-image: url('https://i.pinimg.com/564x/f7/4e/ae/f74eaed12a3f62600aac01ae6985bf7f.jpg');
+  background-image: url('https://i.pinimg.com/564x/8f/91/ef/8f91efdcb6a69a5c4d194d87f50171fb.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -11,7 +11,7 @@ body {
 h1 {
   font-family: Arial, sans-serif;
   font-size: 2em;
-  color: steelblue;
+  color: #616161;
   text-align: center;
   margin-top: 20;
 }

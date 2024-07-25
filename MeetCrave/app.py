@@ -91,12 +91,6 @@ def gallary():
         crave = db.child("crave").get().val()
         return render_template("gallary.html", crave= crave)
 
-    #else:
-       # UID = login_session['user']['localId']
-        #crave = {"crave":request.form['crave'], "whocraves": request.form['whocraves'], "comments": {}}
-        #db.child('crave').push(crave)
-        #return render_template("gallary.html")
-
 #app route signout
 @app.route('/signout')
 def signout():
@@ -107,4 +101,4 @@ def signout():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')

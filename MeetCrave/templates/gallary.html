@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f0f0f0; /* Light grey background */
+            background-color: #616161;
         }
         .container {
             max-width: 800px;
@@ -30,7 +30,7 @@
             margin-bottom: 5px;
         }
         .btn {
-            background-color: steelblue;
+            background-color: #616161;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -42,13 +42,14 @@
         .btn:hover {
             background-color: lightblue;
         }
-        h2 {
-            color: steelblue;
+        h3 {
+            color: #616161;
             text-align: center;
             margin-bottom: 20px;
         }
         h1 {
-            color: steelblue;
+            color: #616161;
+            text-size-adjust: 7px;
             text-align: center;
             margin-bottom: 20px;
             font-size: 50px;
@@ -58,7 +59,7 @@
 <body>
     <div class="container">
         <h1><strong>Crave Gallery</strong></h1>
-        <h2>Here you can see the Craves of all your fellow Meet students!</h2>
+        <h3>Here you can see the Craves of all your fellow Meet students!</h3>
 
         {% for crave in crave.values() %}
         <div class="crave-item">
@@ -69,14 +70,14 @@
         </div>
         {% endfor %}
 
-        <h2>Your craving changed? Want to update your craving?</h2>
+        <h3>Your craving changed? Want to update your craving?</h3>
         <form action="/crave" method="get">
             <div class="center">
                 <button type="submit" class="btn">Click to change</button>
             </div>
         </form>
 
-        <h2>Satisfied with your Crave? We will keep it for you!</h2>
+        <h3>Satisfied with your Crave? We will keep it for you!</h3>
         <form action="/signout" method="get">
             <div class="center">
                 <button type="submit" class="btn">Sign out</button>
